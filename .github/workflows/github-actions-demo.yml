@@ -12,3 +12,9 @@ jobs:
       - run: python3 job.py
       - run: pip install pytest
       - run: pytest test.py
+
+      - name: Archive logs from tests
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-log-report
+          path: logs.txt
