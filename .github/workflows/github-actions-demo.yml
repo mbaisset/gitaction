@@ -14,7 +14,7 @@ jobs:
       - run: pytest test.py
 
       - name: Archive logs from tests
-        if: always()
+        if: failure()
         uses: actions/upload-artifact@v3
         with:
           name: test-log-report
